@@ -17,8 +17,8 @@ Jeweler::Tasks.new do |gem|
   gem.name = "acts_as_draper_decorated"
   gem.homepage = "http://github.com/bastiank/acts_as_draper_decorated"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{Gives models a field with daper decorator of the model itself}
+  gem.description = %Q{}
   gem.email = "bastian.kriesten@mobileeventguide.de"
   gem.authors = ["Bastian Kriesten"]
   # dependencies defined in Gemfile
@@ -31,7 +31,7 @@ Rake::TestTask.new(:test) do |test|
   test.pattern = 'test/**/test_*.rb'
   test.verbose = true
 end
-
+=begin
 require 'rcov/rcovtask'
 Rcov::RcovTask.new do |test|
   test.libs << 'test'
@@ -51,3 +51,4 @@ Rake::RDocTask.new do |rdoc|
   rdoc.rdoc_files.include('README*')
   rdoc.rdoc_files.include('lib/**/*.rb')
 end
+=end
