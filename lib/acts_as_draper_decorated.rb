@@ -13,7 +13,16 @@ module ActsAsDraperDecorated
 
   module InstanceMethods
     def decorated
-      @decorated ||= (self.class.name + 'Decorator').constantize.decorate(self) 
+      return @decorated if @decorated
+      klass = self.class
+      while klass
+        begin
+          @decorated ||= (klass.name + 'Decorator').constantize.decorate(self) 
+          return @decorated
+        rescue
+          klass = klass.superclass
+        end
+      end
     end
 
     alias :d :decorated
