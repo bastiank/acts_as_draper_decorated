@@ -27,7 +27,7 @@ module ActsAsDraperDecorated
             @decorated ||= (klass.name + 'Decorator').constantize.decorate(self) 
             return @decorated
           else
-            @decorated_types[type] ||= ("#{type.to_s.classify}#{klass.name}Decorator").constantize.decorate(self)
+            return @decorated_types[type] ||= ("#{type.to_s.classify}#{klass.name}Decorator").constantize.decorate(self)
           end
         rescue
           klass = klass.superclass
